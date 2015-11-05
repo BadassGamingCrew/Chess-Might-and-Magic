@@ -1,21 +1,60 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-
-namespace BattleChess
+﻿namespace BattleChess.Core
 {
+    using GameScreens;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using Microsoft.Xna.Framework.Input;
+
+    using MonoGameBattleChessLibrary;
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+    public class GameEngine : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private const int screenWidth = 1024;
+        private const int screenHeight = 768;
+        private readonly Rectangle screenRectangle;
 
-        public Game1()
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private GameStateManager stateManager;
+
+        private TitleScreen titleScreen;
+
+        public GameEngine()
         {
-            graphics = new GraphicsDeviceManager(this);
+            this.graphics = new GraphicsDeviceManager(this);
+            this.graphics.PreferredBackBufferWidth = screenWidth;
+            this.graphics.PreferredBackBufferHeight = screenHeight;
+
+            this.screenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
+
             Content.RootDirectory = "Content";
+
+            this.Components.Add(new InputHandler(this));
+
+            this.stateManager = new GameStateManager(this);
+            this.Components.Add(this.stateManager);
+
+            this.titleScreen = new TitleScreen(this, this.stateManager);
+            this.stateManager.ChangeState(this.titleScreen);
+        }
+
+        public SpriteBatch SpriteBatch
+        {
+            get
+            {
+                return this.spriteBatch;
+            }
+        }
+
+        public Rectangle ScreenRectangle
+        {
+            get
+            {
+                return this.screenRectangle;
+            }
         }
 
         /// <summary>
@@ -38,7 +77,7 @@ namespace BattleChess
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+            this.spriteBatch = new SpriteBatch(this.GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -59,8 +98,10 @@ namespace BattleChess
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
                 Exit();
+            }
 
             // TODO: Add your update logic here
 
@@ -73,7 +114,7 @@ namespace BattleChess
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            this.GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
 
