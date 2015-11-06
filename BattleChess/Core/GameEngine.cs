@@ -1,4 +1,6 @@
-﻿namespace BattleChess.Core
+﻿using System.Security.Principal;
+
+namespace BattleChess.Core
 {
     using GameScreens;
     using Microsoft.Xna.Framework;

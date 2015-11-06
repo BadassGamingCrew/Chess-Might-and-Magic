@@ -42,6 +42,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Windows\Debug\BattleChess.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -64,6 +65,13 @@
     <Compile Include="EntryPoint.cs" />
     <Compile Include="GameScreens\BaseGameState.cs" />
     <Compile Include="GameScreens\TitleScreen.cs" />
+    <Compile Include="Interfaces\IAttack.cs" />
+    <Compile Include="Interfaces\IAttackGenerator.cs" />
+    <Compile Include="Interfaces\IChessPiece.cs" />
+    <Compile Include="Interfaces\IDefenseGenerator.cs" />
+    <Compile Include="Interfaces\IDefense.cs" />
+    <Compile Include="Interfaces\IMove.cs" />
+    <Compile Include="Interfaces\IMoveGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Images.cs" />
   </ItemGroup>
@@ -98,7 +106,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BattleChessLibrary\BattleChessLibrary.csproj">
       <Project>{7d79c906-60df-4b44-8fb7-7eb8f96dc9ab}</Project>
