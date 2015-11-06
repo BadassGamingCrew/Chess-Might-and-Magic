@@ -4,7 +4,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for Move objects
     /// </summary>
-    public interface IMove
+    public interface IMove : IFactory<IMove>
     {
     }
 }

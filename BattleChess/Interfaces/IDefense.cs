@@ -4,7 +4,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for Defense objects
     /// </summary>
-    public interface IDefense
+    public interface IDefense : IFactory<IDefense>
     {
     }
 }

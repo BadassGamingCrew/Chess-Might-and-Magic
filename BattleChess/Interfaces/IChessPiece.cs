@@ -4,7 +4,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface defining basic chess piece actions
     /// </summary>
-    public interface IChessPiece
+    public interface IChessPiece : IFactory<IChessPiece>
     {        
     }
 }
