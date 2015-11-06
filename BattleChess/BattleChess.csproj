@@ -66,13 +66,14 @@
     <Compile Include="GameScreens\BaseGameState.cs" />
     <Compile Include="GameScreens\TitleScreen.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
-    <Compile Include="Interfaces\IAttackGenerator.cs" />
+    <Compile Include="Interfaces\IChessBoard.cs" />
+    <Compile Include="Interfaces\IChessBoardPiece.cs" />
     <Compile Include="Interfaces\IChessPiece.cs" />
-    <Compile Include="Interfaces\IDefenseGenerator.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
+    <Compile Include="Interfaces\IFactory.cs" />
     <Compile Include="Interfaces\IMove.cs" />
-    <Compile Include="Interfaces\IMoveGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ErrorMessages.cs" />
     <Compile Include="Utilities\Images.cs" />
   </ItemGroup>
   <ItemGroup>
