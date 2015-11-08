@@ -12,7 +12,7 @@
 
         public event EventHandler OnStateChange;
 
-        public readonly Stack<GameState> gameStates = new Stack<GameState>();
+        private readonly Stack<GameState> gameStates = new Stack<GameState>();
 
         public GameStateManager(Game game)
             : base(game)

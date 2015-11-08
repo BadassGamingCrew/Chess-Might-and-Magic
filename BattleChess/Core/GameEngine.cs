@@ -26,9 +26,11 @@ namespace BattleChess.Core
 
         public GameEngine()
         {
-            this.graphics = new GraphicsDeviceManager(this);
-            this.graphics.PreferredBackBufferWidth = screenWidth;
-            this.graphics.PreferredBackBufferHeight = screenHeight;
+            this.graphics = new GraphicsDeviceManager(this)
+            {
+                PreferredBackBufferWidth = screenWidth,
+                PreferredBackBufferHeight = screenHeight
+            };
 
             this.screenRectangle = new Rectangle(0, 0, screenWidth, screenHeight);
 
