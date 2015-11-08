@@ -65,11 +65,11 @@
     <Compile Include="EntryPoint.cs" />
     <Compile Include="GameScreens\BaseGameState.cs" />
     <Compile Include="GameScreens\TitleScreen.cs" />
+    <Compile Include="Infrastructure\ChessBoard.cs" />
     <Compile Include="Infrastructure\Position.cs" />
-    <Compile Include="Interfaces\ChessBoard.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IChessBoard.cs" />
-    <Compile Include="Interfaces\IChessBoardPiece.cs" />
+    <Compile Include="Interfaces\IField.cs" />
     <Compile Include="Interfaces\IChessPiece.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IFactory.cs" />
