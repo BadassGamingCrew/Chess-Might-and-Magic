@@ -65,6 +65,8 @@
     <Compile Include="EntryPoint.cs" />
     <Compile Include="GameScreens\BaseGameState.cs" />
     <Compile Include="GameScreens\TitleScreen.cs" />
+    <Compile Include="Infrastructure\Position.cs" />
+    <Compile Include="Interfaces\ChessBoard.cs" />
     <Compile Include="Interfaces\IAttack.cs" />
     <Compile Include="Interfaces\IChessBoard.cs" />
     <Compile Include="Interfaces\IChessBoardPiece.cs" />
@@ -107,9 +109,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BattleChessLibrary\BattleChessLibrary.csproj">
       <Project>{7d79c906-60df-4b44-8fb7-7eb8f96dc9ab}</Project>
