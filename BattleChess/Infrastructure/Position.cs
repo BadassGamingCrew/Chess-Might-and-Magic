@@ -20,7 +20,7 @@
 
         public char Column
         {
-            get { return column; }
+            get { return this.column; }
 
             private set
             {
@@ -28,13 +28,13 @@
                 {
                     throw new ArgumentException("The column must be between A and H!", "column");
                 }
-                column = value;
+                this.column = value;
             }
         }
 
         public int Row
         {
-            get { return row; }
+            get { return this.row; }
 
             private set
             {
@@ -42,7 +42,7 @@
                 {
                     throw new ArgumentException("The row must be between 1 and 8!", "row");
                 }
-                row = value;
+                this.row = value;
             }
         }
     }
