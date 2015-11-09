@@ -8,7 +8,7 @@
     {
         private readonly List<GameComponent> childComponents;
 
-        private GameState tag;
+        private readonly GameState tag;
 
         protected GameStateManager stateManager;
 

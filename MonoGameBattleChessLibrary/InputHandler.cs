@@ -21,6 +21,9 @@
 
         public override void Update(GameTime gameTime)
         {
+            LastKeyboardState = KeyboardState;
+            KeyboardState = Keyboard.GetState();
+
             base.Update(gameTime);
         }
 
