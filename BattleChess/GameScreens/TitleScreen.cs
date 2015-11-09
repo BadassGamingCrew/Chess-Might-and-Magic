@@ -16,7 +16,7 @@
 
         protected override void LoadContent()
         {
-            this.backgroundImage = this.engineRef.Content.Load<Texture2D>(Images.TitleScreen);
+            this.backgroundImage = Images.TitleScreen;
 
             base.LoadContent();
         }

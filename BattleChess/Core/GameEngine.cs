@@ -1,4 +1,5 @@
 ﻿using System.Security.Principal;
+using BattleChess.Utilities;
 
 namespace BattleChess.Core
 {
@@ -23,6 +24,7 @@ namespace BattleChess.Core
         private GameStateManager stateManager;
 
         private TitleScreen titleScreen;
+        private PlayingScreen playingScreen;
 
         public GameEngine()
         {
@@ -36,13 +38,18 @@ namespace BattleChess.Core
 
             Content.RootDirectory = "Content";
 
+            this.Components.Add(new TextureLoader(this));
+
             this.Components.Add(new InputHandler(this));
 
             this.stateManager = new GameStateManager(this);
             this.Components.Add(this.stateManager);
 
-            this.titleScreen = new TitleScreen(this, this.stateManager);
-            this.stateManager.ChangeState(this.titleScreen);
+            // this.titleScreen = new TitleScreen(this, this.stateManager);
+            // this.stateManager.ChangeState(this.titleScreen);
+
+            this.playingScreen = new PlayingScreen(this, this.stateManager);
+            this.stateManager.ChangeState(this.playingScreen);
         }
 
         public SpriteBatch SpriteBatch

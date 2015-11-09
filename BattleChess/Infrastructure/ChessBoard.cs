@@ -5,17 +5,22 @@
     using System.Collections;
     using System.Collections.Generic;
     using BattleChess.Interfaces;
+    using BattleChess.Core;
     using Microsoft.Xna.Framework;
 
     public class ChessBoard : DrawableGameComponent, IChessBoard
     {
+        private readonly GameEngine engine;
         private readonly Dictionary<Position, IField> chessBoard = new Dictionary<Position, IField>(); 
 
         public ChessBoard(Game game) 
             : base(game)
         {
-        }
+            this.engine = game as GameEngine;
 
+
+        }
+        
         public IEnumerator<KeyValuePair<Position, IField>> GetEnumerator()
         {
             return this.chessBoard.GetEnumerator();
@@ -103,15 +108,15 @@
      
         public void Move(Position from, Position to)
         {
-            if (this[from].GetChessPiece() == null)
+            if (this[from].ChessPiece == null)
             {
                 throw new ArgumentNullException("from");
             }
 
-            if (this[to].GetChessPiece() == null)
+            if (this[to].ChessPiece == null)
             {
-                this[to].SetChessPiece(this[from].GetChessPiece());
-                this[from].SetChessPiece(null);
+                this[to].ChessPiece = this[from].ChessPiece;
+                this[from].ChessPiece = null;
             }
             else
             {
@@ -122,17 +127,47 @@
 
         public override void Initialize()
         {
+            for (char column = 'A'; column <= 'H'; column++)
+            {
+                for (int row = 1; row <= 8; row++)
+                {
+                    Position currentPosition = new Position(column, row);
+                    IField currentField = new Field(this.Game, currentPosition);
+                    this[currentPosition] = currentField;
+                }
+            }
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
+            foreach (IField field in this.Values)
+            {
+                field.Update(gameTime);
+            }
+
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
+            this.engine.SpriteBatch.Begin();
             base.Draw(gameTime);
+
+            foreach (IField field in this.Values)
+            {
+                field.Draw(gameTime);
+            }
+
+            foreach (IField field in this.Values)
+            {
+                if (field.ChessPiece != null)
+                {
+                    field.ChessPiece.Draw(gameTime);   
+                }
+            }
+
+            this.engine.SpriteBatch.End();
         }
     }
 }

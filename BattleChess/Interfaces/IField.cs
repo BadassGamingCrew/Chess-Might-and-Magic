@@ -2,21 +2,19 @@
 
 namespace BattleChess.Interfaces
 {
+    using BattleChess.Infrastructure;
+    using Microsoft.Xna.Framework;
+
     /// <summary>
     /// Interface for ChessBoardPiece objects
     /// </summary>
-    public interface IField : IFactory<IField>
+    public interface IField : IUpdateable, IDrawable, IFactory<IField>
     {
-        /// <summary>
-        /// Gets Chess Piece placed in this field. Can be null.
-        /// </summary>
-        /// <returns>The Chess Piece or null.</returns>
-        IChessPiece GetChessPiece();
+        Position Position { get; }
 
         /// <summary>
-        /// Sets the Chess Piece in this field.
+        /// The Chess Piece in this Field. Can be null.
         /// </summary>
-        /// <param name="chessPiece">The object to be set.</param>
-        void SetChessPiece(IChessPiece chessPiece);
+        IChessPiece ChessPiece {get; set; }
     }
 }
