@@ -32,7 +32,6 @@ namespace BattleChessUnitTests
         private string failMessage;
 
         [TestInitialize]
-        [STAThread]
         public void SetUp()
         {
             this.column = 'A';
@@ -198,7 +197,7 @@ namespace BattleChessUnitTests
 
         private IChessBoard CreateChessBoard()
         {
-            return new ChessBoard(new GameMock());
+            return new ChessBoard(GameEngine.Instance);
         }
 
         private IField CreateBlackField()
