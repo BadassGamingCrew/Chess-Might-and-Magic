@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BattleChessUnitTests</RootNamespace>
     <AssemblyName>BattleChessUnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.4.0.456, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -50,7 +52,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FieldTestCase.cs" />
+    <Compile Include="MockObjects\GameMock.cs" />
+    <Compile Include="PositionTestCase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BattleChessLibrary\BattleChessLibrary.csproj">
+      <Project>{7d79c906-60df-4b44-8fb7-7eb8f96dc9ab}</Project>
+      <Name>BattleChessLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BattleChess\BattleChess.csproj">
+      <Project>{ab895445-84a6-4ac3-baf4-c6a68aea4c03}</Project>
+      <Name>BattleChess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoGameBattleChessLibrary\MonoGameBattleChessLibrary.csproj">
+      <Project>{020ac4cf-f52b-4fc8-9429-67c7985ab391}</Project>
+      <Name>MonoGameBattleChessLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
