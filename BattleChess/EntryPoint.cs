@@ -1,7 +1,7 @@
 ﻿namespace BattleChess
 {
     using System;
-    using BattleChess.Core;
+    using Core;
 
 #if WINDOWS || LINUX
     /// <summary>

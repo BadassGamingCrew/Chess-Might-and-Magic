@@ -13,6 +13,7 @@ namespace BattleChess.Interfaces
         /// The chess board that this Filed is located on
         /// </summary>
         IChessBoard ChessBoard { get; }
+
         /// <summary>
         /// Get's the position of the IField object
         /// </summary>

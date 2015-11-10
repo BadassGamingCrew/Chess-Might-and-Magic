@@ -70,6 +70,7 @@
     <Compile Include="Infrastructure\Field.cs" />
     <Compile Include="Infrastructure\ChessPiece.cs" />
     <Compile Include="Infrastructure\Move.cs" />
+    <Compile Include="Infrastructure\PawnChessPiece.cs" />
     <Compile Include="Infrastructure\PawnMovePattern.cs" />
     <Compile Include="Infrastructure\Position.cs" />
     <Compile Include="Infrastructure\WhiteField.cs" />

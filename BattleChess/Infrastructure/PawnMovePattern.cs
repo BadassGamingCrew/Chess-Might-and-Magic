@@ -16,7 +16,7 @@ namespace BattleChess.Infrastructure
 
         private PawnMovePattern()
         {
-            //Singleton . Ref. - Singleton [GOF]
+            //Singleton. Ref. - Singleton [GOF]
         }
 
         public ICollection<IMove> GeneratePossibleMoves(IField currentField)
