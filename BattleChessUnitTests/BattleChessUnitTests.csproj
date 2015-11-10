@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{636DDA2E-84D3-42DD-9BFF-C43BB68D61FC}</ProjectGuid>
+    <ProjectGuid>{6382C3AD-2F32-4447-AB2C-51E821EB7325}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BattleChessUnitTests</RootNamespace>
@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FieldTestCase.cs" />
+    <Compile Include="MockObjects\GameMock.cs" />
     <Compile Include="PositionTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>

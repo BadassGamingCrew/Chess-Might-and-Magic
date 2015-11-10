@@ -64,6 +64,7 @@
     <Compile Include="Core\GameEngine.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="GameScreens\BaseGameState.cs" />
+    <Compile Include="GameScreens\PlayingScreen.cs" />
     <Compile Include="GameScreens\TitleScreen.cs" />
     <Compile Include="Infrastructure\BlackField.cs" />
     <Compile Include="Infrastructure\ChessBoard.cs" />
@@ -89,6 +90,8 @@
     <Compile Include="Utilities\ColorType.cs" />
     <Compile Include="Utilities\ErrorMessages.cs" />
     <Compile Include="Utilities\Images.cs" />
+    <Compile Include="Utilities\Paths.cs" />
+    <Compile Include="Utilities\TextureLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -98,7 +101,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\titleScreen.png">
+    <Content Include="Content\Textures\chessboard.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Textures\titleScreen.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />

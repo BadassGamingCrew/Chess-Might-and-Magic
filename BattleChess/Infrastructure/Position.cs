@@ -27,7 +27,7 @@ namespace BattleChess.Infrastructure
 
         public char Column
         {
-            get { return column; }
+            get { return this.column; }
 
             private set
             {
@@ -41,7 +41,7 @@ namespace BattleChess.Infrastructure
 
         public int Row
         {
-            get { return row; }
+            get { return this.row; }
 
             private set
             {
