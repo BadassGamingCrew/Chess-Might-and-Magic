@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FieldTestCase.cs" />
+    <Compile Include="MockObjects\GameMock.cs" />
     <Compile Include="PositionTestCase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
