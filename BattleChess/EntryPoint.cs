@@ -1,7 +1,7 @@
 ﻿namespace BattleChess
 {
     using System;
-    using BattleChess.Core;
+    using Core;
 
 #if WINDOWS || LINUX
     /// <summary>
@@ -15,7 +15,7 @@
         [STAThread]
         static void Main()
         {
-            using (var game = new GameEngine())
+            using (var game = GameEngine.Instance)
             {
                 game.Run();
             }
