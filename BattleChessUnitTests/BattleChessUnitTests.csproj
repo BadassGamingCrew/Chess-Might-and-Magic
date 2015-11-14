@@ -72,10 +72,13 @@
   <ItemGroup>
     <Compile Include="ChessBoardTestCases\AbstractChessBoardTestCase.cs" />
     <Compile Include="ChessBoardTestCases\ChessBoardTestCase.cs" />
+    <Compile Include="FieldTestCases\AbstractFieldFactoryTestCase.cs" />
+    <Compile Include="FieldTestCases\FieldFactoryTestCase.cs" />
     <Compile Include="MockedObjects\MockedBlackField.cs" />
     <Compile Include="MockedObjects\MockedChessBoard.cs" />
     <Compile Include="MockedObjects\MockedChessPiece.cs" />
     <Compile Include="MockedObjects\MockedField.cs" />
+    <Compile Include="MockedObjects\MockedFieldFactory.cs" />
     <Compile Include="MockedObjects\MockedPawnChessPiece.cs" />
     <Compile Include="MockedObjects\MockedWhiteField.cs" />
     <Compile Include="PositionTestCases\AbstractPositionFactoryTestCase.cs" />
@@ -85,6 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
     </Compile>
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BattleChessLibrary\BattleChessLibrary.csproj">

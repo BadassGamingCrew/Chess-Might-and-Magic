@@ -23,10 +23,5 @@ namespace BattleChess.Infrastructure
             : base(position, Color, chessBoard)
         {
         }
-
-        public override IField Create()
-        {
-            return new BlackField(this.Position, this.ChessBoard);
-        }
     }
 }

@@ -80,18 +80,8 @@ namespace BattleChessUnitTests.PositionTestCases
 
         private void FailWithException(Exception e)
         {
-            string message = this.BuildFailMessage(e);
-            Assert.Fail(message);
-        }
-
-        private string BuildFailMessage(Exception e)
-        {
-            string newLine = Environment.NewLine;
-            Type exceptionType = e.GetType();
-            string exceptionMessage = e.Message;
-
-            return string.Format("Unexpected exception ocured!!{0}Exception type: {1}{0}Exception Message: {2}{0}",
-                newLine, exceptionType, exceptionMessage);
+            string errorMessage = Utils.BuildErrorMessage(e);
+            Assert.Fail(errorMessage);
         }
     }
 }

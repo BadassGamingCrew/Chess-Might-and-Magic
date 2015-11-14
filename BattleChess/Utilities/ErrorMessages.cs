@@ -15,5 +15,7 @@ namespace BattleChess.Utilities
         /// Used by IPosition.Row
         /// </summary>
         public const string InvalidRow = "The row must be between 1 and 8!";
+
+        public const string InvalidColor = "The specified color was not recognised!";
     }
 }

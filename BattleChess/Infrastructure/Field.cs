@@ -39,7 +39,5 @@ namespace BattleChess.Infrastructure
         public bool HasChessPiece { get; private set; }
 
         public ColorType Color { get; private set; }
-
-        public abstract IField Create();
     }
 }

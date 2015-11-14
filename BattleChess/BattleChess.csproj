@@ -83,6 +83,7 @@
     <Compile Include="Interfaces\IChessPiece.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IFactory.cs" />
+    <Compile Include="Interfaces\IFieldfactory.cs" />
     <Compile Include="Interfaces\IMove.cs" />
     <Compile Include="Interfaces\IMovePattern.cs" />
     <Compile Include="Interfaces\IPosition.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Utilities\ChessPieceType.cs" />
     <Compile Include="Utilities\ColorType.cs" />
     <Compile Include="Utilities\ErrorMessages.cs" />
+    <Compile Include="Utilities\FieldFactory.cs" />
     <Compile Include="Utilities\Images.cs" />
     <Compile Include="Utilities\Paths.cs" />
     <Compile Include="Utilities\PositionFactory.cs" />
