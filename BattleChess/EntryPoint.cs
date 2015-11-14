@@ -1,4 +1,8 @@
-﻿namespace BattleChess
+﻿using BattleChess.Infrastructure;
+using BattleChess.Interfaces;
+using BattleChess.Utilities;
+
+namespace BattleChess
 {
     using System;
     using Core;

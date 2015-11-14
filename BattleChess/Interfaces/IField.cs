@@ -10,7 +10,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for ChessBoardPiece objects
     /// </summary>
-    public interface IField : IUpdateable, IDrawable, IFactory<IField>
+    public interface IField : IFactory<IField>
     {
         /// <summary>
         /// The chess board that this Filed is located on

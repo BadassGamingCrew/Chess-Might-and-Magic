@@ -12,25 +12,23 @@ namespace BattleChess.Infrastructure
     /// </summary>
     public class ChessBoard : DrawableGameComponent, IChessBoard
     {
-        private readonly GameEngine engine;
-        private readonly Dictionary<Position, IField> chessBoard = new Dictionary<Position, IField>(); 
+        private static readonly GameEngine Engine = GameEngine.Instance;
+        private readonly Dictionary<IPosition, IField> chessBoard; 
 
         /// <summary>
         /// ChessBoard constructor
         /// </summary>
         /// <param name="game"></param>
-        public ChessBoard(Game game) 
-            : base(game)
+        public ChessBoard()
+            : base(Engine)
         {
-            this.engine = game as GameEngine;
-
-
+            this.chessBoard = new Dictionary<IPosition, IField>();
+            this.PopulateChessBoard();
         }
 
         public IField GetFieldAt(IPosition position)
         {
-                throw new NotImplementedException();
-            
+            return this.chessBoard[position];
         }
 
         public override void Initialize()
@@ -43,7 +41,8 @@ namespace BattleChess.Infrastructure
         {
             foreach (IField field in this.chessBoard.Values)
             {
-                field.Update(gameTime);
+                //TODO: Add exception if the field does not implement IUpdateable
+                ((IUpdateable)field).Update(gameTime);
             }
 
             base.Update(gameTime);
@@ -51,23 +50,30 @@ namespace BattleChess.Infrastructure
 
         public override void Draw(GameTime gameTime)
         {
-            this.engine.SpriteBatch.Begin();
+            Engine.SpriteBatch.Begin();
             base.Draw(gameTime);
 
             foreach (IField field in this.chessBoard.Values)
             {
-                field.Draw(gameTime);
+                //TODO: Add exception if the field does not implement IDrawable
+                ((IDrawable)field).Draw(gameTime);
             }
 
             foreach (IField field in this.chessBoard.Values)
             {
                 if (field.ChessPiece != null)
                 {
-                    field.ChessPiece.Draw(gameTime);   
+                    //TODO: Add exception if the field does not implement IDrawable
+                    ((IDrawable)field.ChessPiece).Draw(gameTime);   
                 }
             }
 
-            this.engine.SpriteBatch.End();
+            Engine.SpriteBatch.End();
+        }
+
+        private void PopulateChessBoard()
+        {
+            //TODO: Implement
         }
     }
 }

@@ -13,7 +13,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface defining basic chess piece actions
     /// </summary>
-    public interface IChessPiece : IUpdateable, IDrawable, IFactory<IChessPiece>
+    public interface IChessPiece : IFactory<IChessPiece>
     {        
         /// <summary>
         /// Returns a collection of the possible Moves for this piece

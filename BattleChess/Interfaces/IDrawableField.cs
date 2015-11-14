@@ -5,13 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace BattleChessUnitTests.MockObjects
+namespace BattleChess.Interfaces
 {
-    class GameMock : Game
+    public interface IDrawableField : IField, IUpdateable, IDrawable
     {
-        public GameMock()
-        {
-            this.Run();
-        }
     }
 }

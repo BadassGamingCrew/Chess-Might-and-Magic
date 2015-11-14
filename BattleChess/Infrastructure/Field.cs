@@ -13,6 +13,8 @@ namespace BattleChess.Infrastructure
     /// </summary>
     public abstract class Field : DrawableGameComponent, IField
     {
+        private static readonly GameEngine Engine = GameEngine.Instance;
+
         /// <summary>
         /// Field constructor that takes an IPosition object as argument
         /// </summary>
@@ -20,7 +22,7 @@ namespace BattleChess.Infrastructure
         /// <param name="color">The color for the current IField object</param>
         /// <param name="chessBoard">The chess board for the current IField object</param>
         protected Field(IPosition position, ColorType color, IChessBoard chessBoard)
-            : base(GameEngine.Instance)
+            : base(Engine)
         {
             this.ChessBoard = chessBoard;
             this.Position = position;

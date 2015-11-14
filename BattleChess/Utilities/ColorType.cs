@@ -10,6 +10,7 @@ namespace BattleChess.Utilities
         /// White Color
         /// </summary>
         White,
+
         /// <summary>
         /// Black color
         /// </summary>

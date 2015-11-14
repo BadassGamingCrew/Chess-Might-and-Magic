@@ -6,7 +6,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for Position objects
     /// </summary>
-    public interface IPosition : IEquatable<IPosition>
+    public interface IPosition : IEquatable<object>, IEquatable<IPosition>
     {
         /// <summary>
         /// Returns the Column("x") param of the IPosition object 
