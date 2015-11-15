@@ -4,7 +4,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for Attack objects
     /// </summary>
-    public interface IAttack : IFactory<IAttack>
+    public interface IAttack
     {
     }
 }

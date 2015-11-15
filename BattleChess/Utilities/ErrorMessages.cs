@@ -17,5 +17,7 @@ namespace BattleChess.Utilities
         public const string InvalidRow = "The row must be between 1 and 8!";
 
         public const string InvalidColor = "The specified color was not recognised!";
+
+        public const string DrawAttributeNotSet = "Draw Attribute is not set!";
     }
 }

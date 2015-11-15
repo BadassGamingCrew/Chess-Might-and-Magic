@@ -13,7 +13,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface defining basic chess piece actions
     /// </summary>
-    public interface IChessPiece : IFactory<IChessPiece>
+    public interface IChessPiece : IGameObject, IDrawableAttribute
     {        
         /// <summary>
         /// Returns a collection of the possible Moves for this piece
@@ -34,6 +34,8 @@ namespace BattleChess.Interfaces
         /// Returns the IDefence object for this piece
         /// </summary>
         IDefense Defence { get; }
+
+        IMovePattern MovePattern { get; }
 
         /// <summary>
         /// Returns True if Health is less or equal to 0

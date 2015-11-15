@@ -4,7 +4,7 @@ namespace BattleChess.Interfaces
     /// <summary>
     /// Interface for Move objects.
     /// </summary>
-    public interface IMove : IExecutable, IFactory<IMove>
+    public interface IMove : IExecutable
     {
         /// <summary>
         /// Sets/Gets the From IField object
