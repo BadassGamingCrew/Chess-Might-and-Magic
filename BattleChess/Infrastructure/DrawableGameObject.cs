@@ -11,12 +11,13 @@ namespace BattleChess.Infrastructure
 {
     public abstract class DrawableGameObject : DrawableGameComponent, IDrawableGameObject
     {
-        protected static readonly GameEngine Engine = GameEngine.Instance;
         protected IGameObject gameObject;
+        protected readonly GameEngine Game;
 
-        protected DrawableGameObject(IGameObject gameObject) 
-            : base(Engine)
+        protected DrawableGameObject(GameEngine game, IGameObject gameObject) 
+            : base(game)
         {
+            this.Game = game;
             this.gameObject = gameObject;
         }
 

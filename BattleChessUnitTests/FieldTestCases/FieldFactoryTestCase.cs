@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BattleChess.Interfaces;
-using BattleChessUnitTests.MockedObjects;
+using BattleChess.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BattleChessUnitTests.FieldTestCases
@@ -20,7 +20,7 @@ namespace BattleChessUnitTests.FieldTestCases
 
         protected override IFieldFactory GetFactory()
         {
-            return MockedFieldFactory.Instance;
+            return FieldFactory.Instance;
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using BattleChess.Infrastructure;
 using BattleChess.Interfaces;
 using BattleChess.Utilities;
-using BattleChessUnitTests.MockedObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BattleChessUnitTests.ChessBoardTestCases
@@ -40,6 +40,18 @@ namespace BattleChessUnitTests.ChessBoardTestCases
         }
 
         [TestMethod]
+        public void TestIsdrawableReturnsTrue()
+        {
+            Assert.IsTrue(this.chessBoard.IsDrawable);
+        }
+
+        [TestMethod]
+        public void TestDrawableAttributeSetReturnsFalse()
+        {
+            Assert.IsFalse(this.chessBoard.DrawableAttributeSet);
+        }
+
+        [TestMethod]
         public void TestGetFieldAtDoesNotReturnNull()
         {
             IField result = this.chessBoard.GetFieldAt(this.position);
@@ -64,13 +76,32 @@ namespace BattleChessUnitTests.ChessBoardTestCases
             }
         }
 
+        [TestMethod]
+        public void TestGetAllFieldsDoesNotReturnNull()
+        {
+            ICollection<IField> result = this.chessBoard.GetAllFields();
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
+        public void TestGettAlFieldsReturnsCorrectSize()
+        {
+            
+        }
+
+        [TestMethod]
+        public void TestGetAllFieldsReturnsCorrectFields()
+        {
+            
+        }
+
         private void TestRowWithFirstFieldBlack(int c)
         {
             char column = (char) c;
             for (int row = 1; row <= 8; row++)
             {
                 IPosition position = new Position(column, row);
-                IField expected = new MockedBlackField(position, this.chessBoard);
+                IField expected = new BlackField(position, this.chessBoard);
                 IField result = this.chessBoard.GetFieldAt(position);
 
                 Assert.AreEqual(expected, result);
@@ -83,7 +114,7 @@ namespace BattleChessUnitTests.ChessBoardTestCases
             for (int row = 1; row <= 8; row++)
             {
                 IPosition position = new Position(column, row);
-                IField expected = new MockedWhiteField(position, this.chessBoard);
+                IField expected = new WhiteField(position, this.chessBoard);
                 IField result = this.chessBoard.GetFieldAt(position);
 
                 Assert.AreEqual(expected, result);

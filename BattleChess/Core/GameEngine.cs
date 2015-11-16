@@ -27,8 +27,6 @@ namespace BattleChess.Core
         private TitleScreen titleScreen;
         private PlayingScreen playingScreen;
 
-        public static readonly GameEngine Instance = new GameEngine();
-
         public GameEngine()
         {
             this.graphics = new GraphicsDeviceManager(this)
@@ -51,8 +49,8 @@ namespace BattleChess.Core
             this.titleScreen = new TitleScreen(this, this.stateManager);
             this.stateManager.ChangeState(this.titleScreen);
 
-            //this.playingScreen = new PlayingScreen(this, this.stateManager);
-            //this.stateManager.ChangeState(this.playingScreen);
+            this.playingScreen = new PlayingScreen(this, this.stateManager);
+            this.stateManager.ChangeState(this.playingScreen);
         }
 
         public SpriteBatch SpriteBatch

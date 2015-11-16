@@ -19,7 +19,7 @@ namespace BattleChess
         [STAThread]
         static void Main()
         {
-            using (var game = GameEngine.Instance)
+            using (var game = new GameEngine())
             {
                 game.Run();
             }

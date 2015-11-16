@@ -63,11 +63,11 @@ namespace BattleChess.Infrastructure
 
         public ColorType Color { get; private set; }
 
-        public void MakeDrawable()
+        public void MakeDrawable(GameEngine game)
         {
             if (this.DrawObjectIsNull())
             {
-                this.DrawAttribute = new DrawableField(this);
+                this.DrawAttribute = new DrawableField(game, this);
             }
         }
 

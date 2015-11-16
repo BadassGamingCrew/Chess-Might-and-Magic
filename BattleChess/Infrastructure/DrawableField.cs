@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleChess.Core;
 using BattleChess.Interfaces;
 using Microsoft.Xna.Framework;
 
@@ -12,8 +13,8 @@ namespace BattleChess.Infrastructure
     {
         private readonly IField field;
 
-        public DrawableField(IField field)
-            : base(field)
+        public DrawableField(GameEngine game, IField field)
+            : base(game, field)
         {
             this.field = field;
         }

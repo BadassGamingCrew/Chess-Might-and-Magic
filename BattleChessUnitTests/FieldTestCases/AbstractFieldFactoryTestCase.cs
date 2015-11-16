@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleChess.Infrastructure;
 using BattleChess.Interfaces;
 using BattleChess.Utilities;
-using BattleChessUnitTests.MockedObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BattleChessUnitTests.FieldTestCases
@@ -13,7 +13,7 @@ namespace BattleChessUnitTests.FieldTestCases
     [TestClass]
     public abstract class AbstractFieldFactoryTestCase
     {
-        private readonly IChessBoard chessBoard = new MockedChessBoard();
+        private readonly IChessBoard chessBoard = new ChessBoard();
         private readonly ColorType white = ColorType.White;
         private readonly ColorType black = ColorType.Black;
         private readonly ColorType invalid = ((ColorType) (-1));

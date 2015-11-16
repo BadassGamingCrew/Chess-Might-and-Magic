@@ -9,14 +9,13 @@ namespace BattleChess.GameScreens
 
     public class PlayingScreen : BaseGameState
     {
-        private static readonly Game Engine = GameEngine.Instance;
         private readonly IChessBoard drawableGameObject;
 
-        public PlayingScreen(GameStateManager manager) 
-            : base(Engine, manager)
+        public PlayingScreen(GameEngine game, GameStateManager manager) 
+            : base(game, manager)
         {
             this.drawableGameObject = new ChessBoard();
-            this.drawableGameObject.MakeDrawable();
+            this.drawableGameObject.MakeDrawable(game);
         }
 
         public override void Initialize()

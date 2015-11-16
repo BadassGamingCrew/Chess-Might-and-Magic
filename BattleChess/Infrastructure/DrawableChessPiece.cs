@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleChess.Core;
 using BattleChess.Interfaces;
+using Microsoft.Xna.Framework;
 
 namespace BattleChess.Infrastructure
 {
@@ -11,8 +13,8 @@ namespace BattleChess.Infrastructure
     {
         private IChessPiece chessPiece;
 
-        public DrawableChessPiece(IChessPiece gameObject) 
-            : base(gameObject)
+        public DrawableChessPiece(GameEngine game, IChessPiece gameObject) 
+            : base(game, gameObject)
         {
             this.chessPiece = gameObject;
         }

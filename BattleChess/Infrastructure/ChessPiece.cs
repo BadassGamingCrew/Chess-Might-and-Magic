@@ -70,11 +70,11 @@ namespace BattleChess.Infrastructure
 
         public abstract IChessPiece Create();
 
-        public void MakeDrawable()
+        public void MakeDrawable(GameEngine game)
         {
             if (this.DrawObjectIsNull())
             {
-                this.DrawAttribute = new DrawableChessPiece(this);
+                this.DrawAttribute = new DrawableChessPiece(game, this);
             }
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleChess.Core;
 using BattleChess.Interfaces;
 using Microsoft.Xna.Framework;
 
@@ -12,8 +13,8 @@ namespace BattleChess.Infrastructure
     {
         private IChessBoard chessBoard;
 
-        public DrawableChessBoard(IChessBoard chessBoard)
-            : base(chessBoard)
+        public DrawableChessBoard(GameEngine game, IChessBoard chessBoard)
+            : base(game, chessBoard)
         {
             this.chessBoard = chessBoard;
         }
@@ -30,7 +31,6 @@ namespace BattleChess.Infrastructure
 
         public override void Draw(GameTime gameTime)
         {
-            Engine.SpriteBatch.Begin();
             base.Draw(gameTime);
 
             foreach (IField field in this.chessBoard.GetAllFields())
@@ -38,7 +38,6 @@ namespace BattleChess.Infrastructure
                 field.DrawAttribute.Draw(gameTime);
             }
 
-            //TODO: This should be delegated to the IField object otherwise we break the Law Of Demeter
             foreach (IField field in this.chessBoard.GetAllFields())
             {
                 if (field.ChessPiece != null)
@@ -46,8 +45,6 @@ namespace BattleChess.Infrastructure
                     field.ChessPiece.DrawAttribute.Draw(gameTime);
                 }
             }
-
-            Engine.SpriteBatch.End();
         }
 
         public override bool Equals(IGameObject other)

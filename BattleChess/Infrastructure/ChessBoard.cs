@@ -41,7 +41,7 @@ namespace BattleChess.Infrastructure
         {
             get
             {
-                if (!this.DrawableAttributeSet)
+                if (this.DrawableAttributeSet)
                 {
                     throw new ObjectDisposedException("value", ErrorMessages.DrawAttributeNotSet);
                 }
@@ -62,11 +62,11 @@ namespace BattleChess.Infrastructure
             return this.chessBoard.Values;
         }
 
-        public void MakeDrawable()
+        public void MakeDrawable(GameEngine game)
         {
             if (this.DrawObjectIsNull())
             {
-                this.DrawAttribute = new DrawableChessBoard(this);   
+                this.DrawAttribute = new DrawableChessBoard(game, this);   
             }
         }
 
