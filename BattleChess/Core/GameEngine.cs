@@ -15,7 +15,7 @@ namespace BattleChess.Core
     /// </summary>
     public class GameEngine : Game
     {
-        public static readonly GameEngine Instance = new GameEngine();
+        
         private const int screenWidth = 1024;
         private const int screenHeight = 768;
         private readonly Rectangle screenRectangle;
@@ -27,7 +27,9 @@ namespace BattleChess.Core
         private TitleScreen titleScreen;
         private PlayingScreen playingScreen;
 
-        private GameEngine()
+        public static readonly GameEngine Instance = new GameEngine();
+
+        public GameEngine()
         {
             this.graphics = new GraphicsDeviceManager(this)
             {

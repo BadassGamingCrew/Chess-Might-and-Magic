@@ -1,4 +1,6 @@
-﻿namespace BattleChess.GameScreens
+﻿using BattleChess.Core;
+
+namespace BattleChess.GameScreens
 {
     using BattleChess.Infrastructure;
     using BattleChess.Interfaces;
@@ -7,29 +9,31 @@
 
     public class PlayingScreen : BaseGameState
     {
-        private readonly IChessBoard chessBoard;
+        private static readonly Game Engine = GameEngine.Instance;
+        private readonly IChessBoard drawableGameObject;
 
-        public PlayingScreen(Game game, GameStateManager manager) 
-            : base(game, manager)
+        public PlayingScreen(GameStateManager manager) 
+            : base(Engine, manager)
         {
-            this.chessBoard = new ChessBoard(game);
+            this.drawableGameObject = new ChessBoard();
+            this.drawableGameObject.MakeDrawable();
         }
 
         public override void Initialize()
         {
-            this.chessBoard.Initialize();
+            this.drawableGameObject.DrawAttribute.Initialize();
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
-            this.chessBoard.Update(gameTime);
+            this.drawableGameObject.DrawAttribute.Update(gameTime);
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            this.chessBoard.Draw(gameTime);
+            this.drawableGameObject.DrawAttribute.Draw(gameTime);
             base.Draw(gameTime);
         }
     }

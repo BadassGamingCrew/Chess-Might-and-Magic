@@ -1,4 +1,7 @@
-﻿namespace BattleChess.GameScreens
+﻿using BattleChess.Infrastructure;
+using BattleChess.Interfaces;
+
+namespace BattleChess.GameScreens
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
